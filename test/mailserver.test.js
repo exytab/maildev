@@ -6,7 +6,8 @@
  */
 
 const assert = require('assert')
-const SMTPConnection = require('smtp-connection')
+// const SMTPConnection = require('smtp-connection')
+const SMTPConnection = require('nodemailer/lib/smtp-connection')
 const http = require('http')
 
 const MailDev = require('../index.js')
@@ -25,7 +26,7 @@ describe('mailserver', function () {
 
       // https://stackoverflow.com/a/9132271/3143704
 
-      var originalHandler = process.listeners('uncaughtException').pop()
+      const originalHandler = process.listeners('uncaughtException').pop()
       process.removeListener('uncaughtException', originalHandler)
 
       process.once('uncaughtException', function (err) {

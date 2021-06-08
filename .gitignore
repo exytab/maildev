@@ -8,6 +8,7 @@ dist
 maildev-*
 settings.json
 .nodemonignore
+.idea
 
 # Ignore npm debug log
 npm-debug.log
